@@ -10,4 +10,4 @@ fi
 cd Jisshubot/Jisshu-forward-bot 
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
-gunicorn app:app & python3 main.py
+gunicorn --bind 0.0.0.0:${PORT:-8080} app:app & python3 main.py
